@@ -1,9 +1,21 @@
 <h1> YO ADMIN</h1>
 
+<table>
+  <tr>
+    <th> First </th>
+    <th> Last </th>
+    <th> Email </th>
+    <th> Created at </th>
+    <th> Admin? </th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.firstname%></td> 
+      <td><%= user.lastname %></td>
+      <td><%= user.email %></td>
+      <td><%= user.created_at %></td>
+      <td><%= user.admin %> </td>
+    <tr>
+  <% end %>
+</table>
 <%= paginate @users %>
-
-<% @users.each do |user| %>
-  <div>
-  <%= user.firstname%> <%= user.lastname %> <%= user.created_at %>
-</div>
-<% end %>
