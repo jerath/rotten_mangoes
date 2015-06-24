@@ -1,5 +1,9 @@
 <h1> YO ADMIN</h1>
 
+<%= paginate @users %>
+
 <% @users.each do |user| %>
+  <div>
   <%= user.firstname%> <%= user.lastname %> <%= user.created_at %>
+</div>
 <% end %>
