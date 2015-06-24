@@ -11,6 +11,11 @@
     <%= label_tag "director" %> <br/>
     <%= text_field_tag "director" %>
   </div>
+
+  <div>
+    <%= select_tag(:duration, options_for_select([['Under 90 minutes', 1], ['Between 90 and 120 minutes', 2], ['Over 120 minutes', 3]])) %>
+  </div>
+
   <div><%= submit_tag "Search" %></div>
 <% end %>
 
