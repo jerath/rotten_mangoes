@@ -15,7 +15,11 @@
       <td><%= user.email %></td>
       <td><%= user.created_at %></td>
       <td><%= user.admin %> </td>
+      <td><%= link_to "Edit", edit_admin_user_path(user.id) %> </td>
+      <td><%= link_to "Delete", method: :delete %> </td>
     <tr>
   <% end %>
 </table>
 <%= paginate @users %>
+
+<%= link_to "Create user", new_admin_user_path %>
