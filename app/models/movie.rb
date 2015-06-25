@@ -2,6 +2,12 @@ class Movie < ActiveRecord::Base
   has_many :reviews
   mount_uploader :image, ImageUploader
 
+  scope :search, ->(query_string) { where("title LIKE ? OR director LIKE ?", "%#{query_string}%", "%#{query_string}%") }
+
+  scope :under_90_minutes, -> { where("runtime_in_minutes < 90") }
+  scope :between_90_and_120_minutes, -> { where("runtime_in_minutes BETWEEN 90 AND 120") }
+  scope :over_120_minutes, -> { where("runtime_in_minutes > 120") }
+
 
   validates :title,
     presence: true
