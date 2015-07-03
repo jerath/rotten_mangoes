@@ -8,15 +8,14 @@
     <%= text_field_tag "search", nil, :placeholder => "Search", :class => "form-control" %>
     </div>
 
-  <div class="col-md-4">
-    <%= select_tag(:duration, options_for_select([['Any duration', 'any'], ['Under 90 minutes', 'under_niney'], ['Between 90 and 120 minutes', 'mid_length'], ['Over 120 minutes', 'over_120']]), {class: "form-control"}) %>
-  </div>
-
-  <div class="col-md-4"><%= submit_tag "Search", class: "btn btn-default btn-left-margin" %></div>
+    <div class="col-md-4">
+      <%= select_tag(:duration, options_for_select([['Any duration', 'any'], ['Under 90 minutes', 'under_niney'], ['Between 90 and 120 minutes', 'mid_length'], ['Over 120 minutes', 'over_120']]), {class: "form-control"}) %>
     </div>
 
+    <div class="col-md-4">
+      <%= submit_tag "Search", class: "btn btn-default btn-left-margin" %>
+    </div>
+  </div>
 <% end %>
-
 <hr>
-
 <%= render partial: "movie", collection: @movies %>
